@@ -62,13 +62,45 @@
 			isa = PBXGroup;
 			children = (
 				3616462E1E6EDB7C009232B1 /* AppDelegate.swift */,
-				361646301E6EDB7C009232B1 /* ViewController.swift */,
-				361646321E6EDB7C009232B1 /* Main.storyboard */,
+				36790D5B1E6F1B2100F775B2 /* Model */,
+				36790D5A1E6F1B1700F775B2 /* View */,
+				36790D591E6F1B0D00F775B2 /* Controller */,
+				36790D581E6F16E600F775B2 /* Support Files */,
 				361646351E6EDB7C009232B1 /* Assets.xcassets */,
+			);
+			path = atabixchallenge;
+			sourceTree = "<group>";
+		};
+		36790D581E6F16E600F775B2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				361646321E6EDB7C009232B1 /* Main.storyboard */,
 				361646371E6EDB7C009232B1 /* LaunchScreen.storyboard */,
 				3616463A1E6EDB7C009232B1 /* Info.plist */,
 			);
-			path = atabixchallenge;
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		36790D591E6F1B0D00F775B2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				361646301E6EDB7C009232B1 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		36790D5A1E6F1B1700F775B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		36790D5B1E6F1B2100F775B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		B85FDB36D23E390D8D9EBAD9 /* Frameworks */ = {

@@ -17,9 +17,9 @@ class ViewController: UIViewController {
         
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
-                let alert = UIAlertController(title: "Logged In",
-                                              message: "User \(unwrappedSession.userName) has logged in",
-                    preferredStyle: UIAlertControllerStyle.alert
+                let alert = UIAlertController(  title: "Logged In",
+                                                message: "User \(unwrappedSession.userName) has logged in",
+                                                preferredStyle: UIAlertControllerStyle.alert
                 )
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         
         logInButton.center = self.view.center
         self.view.addSubview(logInButton)
-        
+
 //        if let button == logInButton {
 //            button.center = self.view.center
 //            self.view.addSubview(button)
