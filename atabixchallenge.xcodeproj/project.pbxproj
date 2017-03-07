@@ -101,6 +101,7 @@
 				361646291E6EDB7C009232B1 /* Resources */,
 				D1F308CC25F304372A4CF909 /* [CP] Embed Pods Frameworks */,
 				A478C47FC1DB3360B79B8C95 /* [CP] Copy Pods Resources */,
+				36790D571E6EE5DF00F775B2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -159,6 +160,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		36790D571E6EE5DF00F775B2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 2c88544ea8ecd69b58b7cbd1cd7f666d24c9f6c1 970143cdd7226c52698d2d376d1160edf7441abb34e685d9fe2bf6f7704a40ac";
+		};
 		A478C47FC1DB3360B79B8C95 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,6 +388,7 @@
 				3616463F1E6EDB7C009232B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
