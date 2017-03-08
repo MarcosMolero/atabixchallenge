@@ -2,25 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Fabric</key>
-    <dict>
-        <key>APIKey</key>
-        <string>2c88544ea8ecd69b58b7cbd1cd7f666d24c9f6c1</string>
-        <key>Kits</key>
-        <array>
-            <dict>
-                <key>KitInfo</key>
-                <dict>
-                    <key>consumerKey</key>
-                    <string>ATt8X8chfjBl6nsvFzxazRqvk</string>
-                    <key>consumerSecret</key>
-                    <string>Elle0HPh35Djb7Zpj3RYiBUsGuBmCsJ5TBLeBCwKxfMDYvDbKx</string>
-                </dict>
-                <key>KitName</key>
-                <string>Twitter</string>
-            </dict>
-        </array>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>2c88544ea8ecd69b58b7cbd1cd7f666d24c9f6c1</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>ATt8X8chfjBl6nsvFzxazRqvk</string>
+					<key>consumerSecret</key>
+					<string>Elle0HPh35Djb7Zpj3RYiBUsGuBmCsJ5TBLeBCwKxfMDYvDbKx</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+			</dict>
+		</array>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

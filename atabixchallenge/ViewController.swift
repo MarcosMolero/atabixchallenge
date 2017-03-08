@@ -22,26 +22,14 @@ class ViewController: UIViewController {
                 print("\n\(unwrappedSession.authTokenSecret)")
                 
                 
-                let alert = UIAlertController(  title: "Logged In",
-                                                message: "User \(unwrappedSession.userName) has logged in",
-                    preferredStyle: UIAlertControllerStyle.alert
-                )
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                
             } else {
                 NSLog("Login error: %@", error!.localizedDescription);
             }
         }
         
-        // TODO: Change where the log in button is positioned in your view
-        
         logInButton.center = self.view.center
         self.view.addSubview(logInButton)
-        
-        //        if let button == logInButton {
-        //            button.center = self.view.center
-        //            self.view.addSubview(button)
-        //        }
 
     }
     
@@ -49,12 +37,5 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         draw()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
