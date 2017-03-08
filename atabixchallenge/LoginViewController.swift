@@ -1,17 +1,16 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  atabixchallenge
 //
-//  Created by Marcos Molero on 7/3/17.
+//  Created by Marcos on 8/3/17.
 //  Copyright © 2017 marcosmolero. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import TwitterKit
 
-
-class ViewController: UIViewController {
-
+class LoginViewController:UIViewController {
     func draw() {
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
@@ -30,7 +29,7 @@ class ViewController: UIViewController {
         
         logInButton.center = self.view.center
         self.view.addSubview(logInButton)
-
+        
     }
     
     override func viewDidLoad() {
@@ -38,4 +37,3 @@ class ViewController: UIViewController {
         draw()
     }
 }
-

@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="529" y="271"/>
         </scene>
-        <!--Profile-->
+        <!--Login-->
         <scene sceneID="Krk-rJ-zQj">
             <objects>
-                <viewController title="Profile" id="GAA-cQ-jcf" sceneMemberID="viewController">
+                <viewController title="Login" id="GAA-cQ-jcf" customClass="LoginViewController" customModule="atabixchallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o7P-nm-E8V"/>
                         <viewControllerLayoutGuide type="bottom" id="jmC-Fp-dYQ"/>
@@ -41,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="AX0-RM-dhn"/>
+                    <tabBarItem key="tabBarItem" title="Login" id="AX0-RM-dhn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oD-2W-tBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
