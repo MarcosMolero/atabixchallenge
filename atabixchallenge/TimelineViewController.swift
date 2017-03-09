@@ -14,7 +14,7 @@ class TimelineViewController: TWTRTimelineViewController {
             
             let client      = TWTRAPIClient()
             let dataSource  = TWTRUserTimelineDataSource(screenName: client.userID!, apiClient: client)
-            
+
             self.init(dataSource: dataSource)
         }
         
@@ -25,7 +25,7 @@ class TimelineViewController: TWTRTimelineViewController {
         required init(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)!
             
-            tabBarItem = UITabBarItem(title: "Personal", image: AppConstants.appImage.twitterNormal, selectedImage: AppConstants.appImage.twitterHighlited)
+            tabBarItem = UITabBarItem(title: "Timeline", image: AppConstants.appImage.twitterNormal, selectedImage: AppConstants.appImage.twitterHighlited)
             tabBarItem.isEnabled = true
         }
 
@@ -38,7 +38,28 @@ class TimelineViewController: TWTRTimelineViewController {
                 
                 super.viewWillAppear(animated)
             }
+            
             print("Entro en Timeline")
         }
-        
+    
+    
+//    func showTimeline() {
+//        // Create an API client and data source to fetch Tweets for the timeline
+//        let client = TWTRAPIClient()
+//        //TODO: Replace with your collection id or a different data source
+//        let dataSource = TWTRCollectionTimelineDataSource(collectionID: "539487832448843776", apiClient: client)
+//        // Create the timeline view controller
+//        let timelineViewControlller = TWTRTimelineViewController(dataSource: dataSource)
+//        // Create done button to dismiss the view controller
+//        let button = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissTimeline))
+//        timelineViewControlller.navigationItem.leftBarButtonItem = button
+//        // Create a navigation controller to hold the
+//        let navigationController = UINavigationController(rootViewController: timelineViewControlller)
+//        showDetailViewController(navigationController, sender: self)
+//    }
+//    
+//    func dismissTimeline() {
+//        dismiss(animated: true, completion: nil)
+//    }
+
 }
