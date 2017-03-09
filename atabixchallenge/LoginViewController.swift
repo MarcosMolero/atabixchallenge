@@ -43,4 +43,10 @@ class LoginViewController:UIViewController {
         super.viewDidLoad()
         draw()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("LoginViewController.viewWillAppear)")
+        
+    }
 }

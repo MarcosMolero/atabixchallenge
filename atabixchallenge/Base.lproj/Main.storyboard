@@ -50,7 +50,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="oSa-68-jdK">
             <objects>
-                <tabBarController id="qKc-kG-hvS" sceneMemberID="viewController">
+                <tabBarController id="qKc-kG-hvS" customClass="TabBarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="gph-mA-Inm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

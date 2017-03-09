@@ -28,18 +28,19 @@ class TimelineViewController: TWTRTimelineViewController {
         
         override func viewWillAppear(_ animated: Bool) {
             
-//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            
-            let client = TWTRAPIClient()
-
-            let screenName = "applesfera"
+            if UserDefaults.standard.object(forKey: "userID") != nil {
+                //            let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 
-            self.dataSource = TWTRUserTimelineDataSource(screenName: screenName, apiClient: client)
+                let client      :TWTRAPIClient = TWTRAPIClient()
+                let screenName  :String = "applesfera"
+                self.dataSource = TWTRUserTimelineDataSource(screenName: screenName, apiClient: client)
+                
+                super.viewWillAppear(animated)
+                
+                print("TimelineViewController.viewWillAppear)")
+            }
             
-            // kick off actual rendering
-            super.viewWillAppear(animated)
-            
-            print("TweetViewController.viewWillAppear: \(self.dataSource)")
+
         }
         
 }
