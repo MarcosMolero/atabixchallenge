@@ -24,9 +24,7 @@ class ProfileViewController: TWTRTimelineViewController {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        
-        tabBarItem = UITabBarItem(title: "Profile", image: AppConstants.appImage.twitterNormal, selectedImage: AppConstants.appImage.twitterHighlited)
-        tabBarItem.isEnabled = true
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

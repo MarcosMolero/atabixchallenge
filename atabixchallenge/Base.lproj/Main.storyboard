@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qKc-kG-hvS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="C0v-IG-G5g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -45,26 +45,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIR-Fo-CE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1233" y="-74"/>
+            <point key="canvasLocation" x="529" y="-389"/>
         </scene>
         <!--Login-->
-        <scene sceneID="Krk-rJ-zQj">
+        <scene sceneID="A1x-6m-MmW">
             <objects>
-                <viewController title="Login" id="GAA-cQ-jcf" customClass="LoginViewController" customModule="atabixchallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" id="C0v-IG-G5g" customClass="LoginViewController" customModule="atabixchallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="o7P-nm-E8V"/>
-                        <viewControllerLayoutGuide type="bottom" id="jmC-Fp-dYQ"/>
+                        <viewControllerLayoutGuide type="top" id="eXZ-EH-DS4"/>
+                        <viewControllerLayoutGuide type="bottom" id="pab-fF-0wn"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GQz-Ah-kgm">
+                    <view key="view" contentMode="scaleToFill" id="oZP-vP-w5p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Login" id="AX0-RM-dhn"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7oD-2W-tBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gYI-qu-KNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529" y="-386"/>
+            <point key="canvasLocation" x="-940" y="-72"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oSa-68-jdK">
@@ -76,7 +75,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="GAA-cQ-jcf" kind="relationship" relationship="viewControllers" id="FgN-Ju-Wxs"/>
                         <segue destination="oPw-K7-ooQ" kind="relationship" relationship="viewControllers" id="zAb-AX-aXe"/>
                         <segue destination="W3p-WQ-osr" kind="relationship" relationship="viewControllers" id="aQZ-Xz-mX9"/>
                     </connections>

@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 import TwitterKit
 
+let loginOk     :String = "com.marcosmolero.loginOk"
+let loginError  :String = "com.marcosmolero.loginError"
+
 class LoginViewController: UIViewController {
     
     func draw() {
@@ -37,18 +40,32 @@ class LoginViewController: UIViewController {
         UserDefaults.standard.set(authTokenSecret,  forKey: "authTokenSecret")
         UserDefaults.standard.synchronize()
         
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: loginOk), object: self)
+    }
+    
+    func loginSuccess() {
+        NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: loginOk),object: nil)
+//        self.utilActivityIndicator.stopActivityIndicator(self.utilActivityIndicator.actInd)
+                
+        self.present(TabBarController(), animated: true, completion: nil)
+    }
+    
+    func loginFailure() {
+        NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: loginError),object: nil)
+        // Show alert
     }
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         
-        tabBarItem = UITabBarItem(title: "Home", image: AppConstants.appImage.homeNormal, selectedImage: AppConstants.appImage.homeHighlited)
-        tabBarItem.isEnabled = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         draw()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.loginSuccess), name: NSNotification.Name(rawValue: loginOk), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.loginFailure), name: NSNotification.Name(rawValue: loginError), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
