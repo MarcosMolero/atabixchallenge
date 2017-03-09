@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 import TwitterKit
 
-class LoginViewController:UIViewController {
+class LoginViewController: UIViewController {
+    
     func draw() {
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
-                
                 print("\n\(unwrappedSession.userID)")
                 print("\n\(unwrappedSession.userName)")
                 print("\n\(unwrappedSession.authToken)")
@@ -31,13 +31,20 @@ class LoginViewController:UIViewController {
     }
     
     func saveToken(_ userID:String, _ userName:String, _ authToken:String, _ authTokenSecret:String) {
-        UserDefaults.standard.set(userID, forKey: "userID")
-        UserDefaults.standard.set(userName, forKey: "userName")
-        UserDefaults.standard.set(authToken, forKey: "authToken")
-        UserDefaults.standard.set(authTokenSecret, forKey: "authTokenSecret")
+        UserDefaults.standard.set(userID,           forKey: "userID")
+        UserDefaults.standard.set(userName,         forKey: "userName")
+        UserDefaults.standard.set(authToken,        forKey: "authToken")
+        UserDefaults.standard.set(authTokenSecret,  forKey: "authTokenSecret")
         UserDefaults.standard.synchronize()
+        
     }
 
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        
+        tabBarItem = UITabBarItem(title: "Home", image: AppConstants.appImage.homeNormal, selectedImage: AppConstants.appImage.homeHighlited)
+        tabBarItem.isEnabled = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +53,7 @@ class LoginViewController:UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("LoginViewController.viewWillAppear)")
+        print("Entro en Login")
         
     }
 }

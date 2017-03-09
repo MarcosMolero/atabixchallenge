@@ -25,25 +25,20 @@ class TimelineViewController: TWTRTimelineViewController {
         required init(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)!
             
-            tabBarItem = UITabBarItem(title: "Personal", image: UIImage(named:""), selectedImage: UIImage(named:""))
-            tabBarItem.isEnabled = false
+            tabBarItem = UITabBarItem(title: "Personal", image: AppConstants.appImage.twitterNormal, selectedImage: AppConstants.appImage.twitterHighlited)
+            tabBarItem.isEnabled = true
         }
 
         override func viewWillAppear(_ animated: Bool) {
             
             if UserDefaults.standard.object(forKey: "userID") != nil {
-                //            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                
                 let client      :TWTRAPIClient = TWTRAPIClient()
-                let screenName  :String = "applesfera"
+                let screenName  :String = UserDefaults.standard.object(forKey: "userName") as! String
                 self.dataSource = TWTRUserTimelineDataSource(screenName: screenName, apiClient: client)
                 
                 super.viewWillAppear(animated)
-                
-                print("TimelineViewController.viewWillAppear)")
             }
-            
-
+            print("Entro en Timeline")
         }
         
 }

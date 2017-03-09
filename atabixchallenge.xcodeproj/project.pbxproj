@@ -12,6 +12,7 @@
 		361646361E6EDB7C009232B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 361646351E6EDB7C009232B1 /* Assets.xcassets */; };
 		361646391E6EDB7C009232B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 361646371E6EDB7C009232B1 /* LaunchScreen.storyboard */; };
 		3637345F1E713BE300AD7F51 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637345E1E713BE300AD7F51 /* TabBarController.swift */; };
+		363734621E7179F600AD7F51 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363734611E7179F600AD7F51 /* AppConstants.swift */; };
 		363FFF1A1E6FFF2F00C7B64E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FFF191E6FFF2F00C7B64E /* LoginViewController.swift */; };
 		36ECE09F1E6F2920000C4B10 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ECE09E1E6F2920000C4B10 /* TimelineViewController.swift */; };
 		BD31964FDC427B2B6E2B4338 /* Pods_atabixchallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082F33C4423A16D6F8C15508 /* Pods_atabixchallenge.framework */; };
@@ -26,6 +27,7 @@
 		361646381E6EDB7C009232B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3616463A1E6EDB7C009232B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3637345E1E713BE300AD7F51 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		363734611E7179F600AD7F51 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		363FFF191E6FFF2F00C7B64E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		36ECE09E1E6F2920000C4B10 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		384FE8A745B3549A9A367048 /* Pods-atabixchallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-atabixchallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-atabixchallenge/Pods-atabixchallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				3616462E1E6EDB7C009232B1 /* AppDelegate.swift */,
+				363734601E7179E500AD7F51 /* Util */,
 				36790D5B1E6F1B2100F775B2 /* Model */,
 				36790D5A1E6F1B1700F775B2 /* View */,
 				36790D591E6F1B0D00F775B2 /* Controller */,
@@ -73,6 +76,14 @@
 				361646351E6EDB7C009232B1 /* Assets.xcassets */,
 			);
 			path = atabixchallenge;
+			sourceTree = "<group>";
+		};
+		363734601E7179E500AD7F51 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				363734611E7179F600AD7F51 /* AppConstants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		36790D581E6F16E600F775B2 /* Support Files */ = {
@@ -267,6 +278,7 @@
 				3637345F1E713BE300AD7F51 /* TabBarController.swift in Sources */,
 				3616462F1E6EDB7C009232B1 /* AppDelegate.swift in Sources */,
 				36ECE09F1E6F2920000C4B10 /* TimelineViewController.swift in Sources */,
+				363734621E7179F600AD7F51 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
