@@ -38,7 +38,7 @@ class ProfileViewController: TWTRTimelineViewController {
             
             super.viewWillAppear(animated)
         }
-        
+        self.navigationItem.title = "Marcos"
         print("Entro en Timeline")
     }
     override var prefersStatusBarHidden: Bool {
