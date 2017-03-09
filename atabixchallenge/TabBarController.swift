@@ -9,8 +9,9 @@
 
 import Foundation
 import UIKit
+import TwitterKit
 
-class TabBarController: UITabBarController, UITabBarControllerDelegate {
+class TabBarController2: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +20,16 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let tabOne = ProfileViewController()
-        let tabOneBarItem = UITabBarItem(title: "Profile", image: AppConstants.appImage.twitterNormal, selectedImage: AppConstants.appImage.twitterHighlited)
-        tabOne.tabBarItem = tabOneBarItem
-        
-        let tabTwo = TimelineViewController()
-        let tabTwoBarItem2 = UITabBarItem(title: "Timeline", image: AppConstants.appImage.twitterNormal, selectedImage: AppConstants.appImage.twitterHighlited)
-        tabTwo.tabBarItem = tabTwoBarItem2
+//        
+//        let tabOne = UIViewController()
+//        let tabOneBarItem = UITabBarItem(title: "Profile", image: AppConstants.appImage.twitterNormal, selectedImage: AppConstants.appImage.twitterHighlited)
+//        tabOne.tabBarItem = tabOneBarItem
+//        
+//        let tabTwo = UIViewController()
+//        let tabTwoBarItem2 = UITabBarItem(title: "Timeline", image: AppConstants.appImage.twitterNormal, selectedImage: AppConstants.appImage.twitterHighlited)
+//        tabTwo.tabBarItem = tabTwoBarItem2
 //
-        self.viewControllers = [tabOne, tabTwo]
+//        self.viewControllers = [tabOne, tabTwo]
     }
     
     // UITabBarControllerDelegate method

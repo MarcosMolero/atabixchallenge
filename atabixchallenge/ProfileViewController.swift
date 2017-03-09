@@ -11,7 +11,7 @@ import TwitterKit
 
 class ProfileViewController: TWTRTimelineViewController {
     convenience init() {
-        
+    
         let client      = TWTRAPIClient()
         let dataSource  = TWTRUserTimelineDataSource(screenName: client.userID!, apiClient: client)
         
@@ -24,7 +24,9 @@ class ProfileViewController: TWTRTimelineViewController {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-
+        
+        tabBarItem = UITabBarItem(title: "Personal", image: AppConstants.appImage.homeNormal, selectedImage: AppConstants.appImage.homeHighlited)
+        tabBarItem.isEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

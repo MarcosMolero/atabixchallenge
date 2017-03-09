@@ -47,7 +47,10 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: loginOk),object: nil)
 //        self.utilActivityIndicator.stopActivityIndicator(self.utilActivityIndicator.actInd)
                 
-        self.present(TabBarController(), animated: true, completion: nil)
+        let viewController  :UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+        viewController.selectedIndex = 1
+        
+        self.present(viewController, animated: true, completion: nil)
     }
     
     func loginFailure() {
