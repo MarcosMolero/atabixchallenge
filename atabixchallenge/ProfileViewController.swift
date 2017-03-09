@@ -41,5 +41,8 @@ class ProfileViewController: TWTRTimelineViewController {
         
         print("Entro en Timeline")
     }
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
 }

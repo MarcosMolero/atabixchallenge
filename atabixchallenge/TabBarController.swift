@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 import TwitterKit
 
-class TabBarController2: UITabBarController, UITabBarControllerDelegate {
+class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()

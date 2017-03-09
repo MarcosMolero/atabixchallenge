@@ -76,4 +76,7 @@ class LoginViewController: UIViewController {
         print("Entro en Login")
         
     }
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }

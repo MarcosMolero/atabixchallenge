@@ -61,5 +61,8 @@ class TimelineViewController: TWTRTimelineViewController {
 //    func dismissTimeline() {
 //        dismiss(animated: true, completion: nil)
 //    }
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
 }
