@@ -12,8 +12,8 @@ import TwitterKit
 class TimelineViewController: TWTRTimelineViewController {
         convenience init() {
             
-            let client = TWTRAPIClient()
-            let dataSource = TWTRUserTimelineDataSource(screenName: client.userID!, apiClient: client)
+            let client      = TWTRAPIClient()
+            let dataSource  = TWTRUserTimelineDataSource(screenName: client.userID!, apiClient: client)
             
             self.init(dataSource: dataSource)
         }
@@ -24,8 +24,11 @@ class TimelineViewController: TWTRTimelineViewController {
         
         required init(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)!
+            
+            tabBarItem = UITabBarItem(title: "Personal", image: UIImage(named:""), selectedImage: UIImage(named:""))
+            tabBarItem.isEnabled = false
         }
-        
+
         override func viewWillAppear(_ animated: Bool) {
             
             if UserDefaults.standard.object(forKey: "userID") != nil {
