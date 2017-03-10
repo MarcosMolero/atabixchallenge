@@ -10,16 +10,29 @@ import Foundation
 import TwitterKit
 
 class ProfileViewController: TWTRTimelineViewController {
-    convenience init() {
     
-        let client      = TWTRAPIClient()
-        let dataSource  = TWTRUserTimelineDataSource(screenName: client.userID!, apiClient: client)
-        
-        self.init(dataSource: dataSource)
+    func show() {
+        if UserDefaults.standard.object(forKey: "userID") != nil {
+            
+            let client      :TWTRAPIClient = TWTRAPIClient()
+            let screenName  :String = UserDefaults.standard.object(forKey: "userName") as! String
+            
+            self.dataSource = TWTRUserTimelineDataSource(screenName: screenName, apiClient: client)
+            
+            self.showTweetActions = true
+            
+            self.navigationItem.title = screenName
+        }
     }
     
-    override required init(dataSource: TWTRTimelineDataSource?) {
-        super.init(dataSource: dataSource)
+    func show2(){
+        let client      = TWTRAPIClient()
+        self.dataSource = TWTRSearchTimelineDataSource(searchQuery: "#apple", apiClient: client)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        show2()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -29,20 +42,12 @@ class ProfileViewController: TWTRTimelineViewController {
         tabBarItem.isEnabled = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        if UserDefaults.standard.object(forKey: "userID") != nil {
-            let client      :TWTRAPIClient = TWTRAPIClient()
-            let screenName  :String = UserDefaults.standard.object(forKey: "userName") as! String
-            self.dataSource = TWTRUserTimelineDataSource(screenName: screenName, apiClient: client)
-            
-            super.viewWillAppear(animated)
-        }
-        self.navigationItem.title = "Marcos"
-        print("Entro en Timeline")
-    }
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
 }
+
+
+    
+
+

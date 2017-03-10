@@ -11,11 +11,11 @@ import TwitterKit
 
 class WebServiceComunication {
     
-    func request() {
+    func tweetRequest(_ id:String) { //        595488594917195776
         // Swift
         let client = TWTRAPIClient()
         let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/show.json"
-        let params = ["id": "595488594917195776"]
+        let params = ["id": "\(id)"]
         var clientError : NSError?
         
         let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)

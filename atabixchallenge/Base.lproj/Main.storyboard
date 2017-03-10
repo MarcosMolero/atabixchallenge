@@ -9,25 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Timeline-->
-        <scene sceneID="Pka-3H-utt">
-            <objects>
-                <viewController title="Timeline" id="oPw-K7-ooQ" customClass="TimelineViewController" customModule="atabixchallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CMI-Nu-HIx"/>
-                        <viewControllerLayoutGuide type="bottom" id="oPu-s6-WVs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nXd-IL-yG9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Timeline" id="M63-VJ-ahX"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tbq-7y-ZIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="529" y="289"/>
-        </scene>
         <!--Favourites-->
         <scene sceneID="j0x-Kw-y73">
             <objects>
@@ -94,14 +75,56 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="oPw-K7-ooQ" kind="relationship" relationship="viewControllers" id="zAb-AX-aXe"/>
                         <segue destination="9Yy-5M-Sli" kind="relationship" relationship="viewControllers" id="aQZ-Xz-mX9"/>
                         <segue destination="XcN-3o-hh3" kind="relationship" relationship="viewControllers" id="nAi-fm-EzL"/>
+                        <segue destination="Dhg-mg-BnG" kind="relationship" relationship="viewControllers" id="hYJ-gw-xev"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3i-O6-mIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-258" y="-74"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="30t-zH-1vD">
+            <objects>
+                <viewController title="Search" id="Dhg-mg-BnG" customClass="SearchViewController" customModule="atabixchallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gVP-1K-4IC"/>
+                        <viewControllerLayoutGuide type="bottom" id="KLX-WK-Vna"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TAW-3L-GmX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AlU-bT-MOu" customClass="CustomSearchBar">
+                                <rect key="frame" x="0.0" y="210" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What do you want to search?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYE-d7-YDA">
+                                <rect key="frame" x="16" y="94" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdT-ZU-MaB" customClass="CustomSearchButton">
+                                <rect key="frame" x="157" y="318" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="NQq-iB-3xS"/>
+                    <connections>
+                        <outlet property="searchBar" destination="AlU-bT-MOu" id="Onv-D7-l2p"/>
+                        <outlet property="searchButton" destination="sdT-ZU-MaB" id="SA5-Q4-Mfk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H3j-Lw-E0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="528.79999999999995" y="338.68065967016497"/>
         </scene>
         <!--Profile NavigationController-->
         <scene sceneID="bFL-Tv-j5a">
