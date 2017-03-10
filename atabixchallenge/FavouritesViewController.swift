@@ -12,6 +12,8 @@ import TwitterKit
 class FavouritesViewController:TWTRTimelineViewController {
     
     convenience init() {
+//        let strUrl = “twitter://user?screen_name=\(twt.author.screenName)”
+//        let strUrlWww = “https://twitter.com/\(twt.author.screenName)"
         
         let client      = TWTRAPIClient()
         let dataSource  = TWTRUserTimelineDataSource(screenName: client.userID!, apiClient: client)

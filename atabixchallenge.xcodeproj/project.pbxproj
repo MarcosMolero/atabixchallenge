@@ -16,6 +16,7 @@
 		363734621E7179F600AD7F51 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363734611E7179F600AD7F51 /* AppConstants.swift */; };
 		363734641E717F1E00AD7F51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363734631E717F1E00AD7F51 /* ProfileViewController.swift */; };
 		363FFF1A1E6FFF2F00C7B64E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FFF191E6FFF2F00C7B64E /* LoginViewController.swift */; };
+		368F4E421E73139B00CEB917 /* WebServiceCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F4E411E73139B00CEB917 /* WebServiceCommunication.swift */; };
 		36ECE09F1E6F2920000C4B10 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ECE09E1E6F2920000C4B10 /* TimelineViewController.swift */; };
 		BD31964FDC427B2B6E2B4338 /* Pods_atabixchallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082F33C4423A16D6F8C15508 /* Pods_atabixchallenge.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		363734611E7179F600AD7F51 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		363734631E717F1E00AD7F51 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		363FFF191E6FFF2F00C7B64E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		368F4E411E73139B00CEB917 /* WebServiceCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceCommunication.swift; sourceTree = "<group>"; };
 		36ECE09E1E6F2920000C4B10 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		384FE8A745B3549A9A367048 /* Pods-atabixchallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-atabixchallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-atabixchallenge/Pods-atabixchallenge.release.xcconfig"; sourceTree = "<group>"; };
 		4C3A3597C4C91F0EA49E7C5F /* Pods-atabixchallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-atabixchallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-atabixchallenge/Pods-atabixchallenge.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		36790D5B1E6F1B2100F775B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				368F4E411E73139B00CEB917 /* WebServiceCommunication.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				3637345F1E713BE300AD7F51 /* TabBarController.swift in Sources */,
 				3616462F1E6EDB7C009232B1 /* AppDelegate.swift in Sources */,
 				36ECE09F1E6F2920000C4B10 /* TimelineViewController.swift in Sources */,
+				368F4E421E73139B00CEB917 /* WebServiceCommunication.swift in Sources */,
 				36197F851E71E12900AF9D94 /* FavouritesViewController.swift in Sources */,
 				363734621E7179F600AD7F51 /* AppConstants.swift in Sources */,
 			);
