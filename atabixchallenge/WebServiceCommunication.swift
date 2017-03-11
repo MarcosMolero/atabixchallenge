@@ -28,6 +28,7 @@ class WebServiceComunication {
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])
                 print("json: \(json)")
+                // TODO: Return jsonData
             } catch let jsonError as NSError {
                 print("json error: \(jsonError.localizedDescription)")
             }

@@ -23,8 +23,19 @@ class FavouritesViewController: TWTRTimelineViewController, TWTRTweetViewDelegat
         }
     }
     
+    func setupData() {
+        let webServiceCommunication:WebServiceComunication = WebServiceComunication()
+        webServiceCommunication.tweetFavorites(UserDefaults.standard.object(forKey: "userID")! as! String)
+//        let tweets = TWTRTweet.tweetsWithJSONArray(array)
+        
+        // TODO: Recoger el JSON y mostrar los Tweets.
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
+        
         show()
     }
     func tweetView(tweetView: TWTRTweetView, didSelectTweet tweet: TWTRTweet) {

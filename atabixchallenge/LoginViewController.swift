@@ -52,12 +52,8 @@ class LoginViewController: UIViewController {
                 
         let viewController  :UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
         viewController.selectedIndex = 0
-
         
-        let wsc = WebServiceComunication()
-        wsc.tweetFavorites(UserDefaults.standard.string(forKey: "userID")!)
-        
-//        self.present(viewController, animated: true, completion: nil)
+        self.present(viewController, animated: true, completion: nil)
     }
     
     func loginFailure() {
