@@ -9,39 +9,29 @@
 import Foundation
 import TwitterKit
 
-class FavouritesViewController:TWTRTimelineViewController {
+class FavouritesViewController: TWTRTimelineViewController, TWTRTweetViewDelegate {
     
-    convenience init() {
-//        let strUrl = “twitter://user?screen_name=\(twt.author.screenName)”
-//        let strUrlWww = “https://twitter.com/\(twt.author.screenName)"
-        
-        let client      = TWTRAPIClient()
-        let dataSource  = TWTRUserTimelineDataSource(screenName: client.userID!, apiClient: client)
-        
-        self.init(dataSource: dataSource)
+    
+    func show() {
+        if UserDefaults.standard.object(forKey: "userID") != nil {
+            
+            let client      :TWTRAPIClient = TWTRAPIClient()
+            let screenName  :String = UserDefaults.standard.object(forKey: "userName") as! String
+            
+            self.dataSource = TWTRUserTimelineDataSource(screenName: screenName, apiClient: client)
+            self.showTweetActions = true
+        }
     }
     
-    override required init(dataSource: TWTRTimelineDataSource?) {
-        super.init(dataSource: dataSource)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        show()
+    }
+    func tweetView(tweetView: TWTRTweetView, didSelectTweet tweet: TWTRTweet) {
+        // Log a message whenever a user taps on a tweet
+        print("Selected tweet with ID: \(tweet.tweetID)")
     }
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        
-//        tabBarItem = UITabBarItem(title: "Favourites", image: AppConstants.appImage.homeNormal, selectedImage: AppConstants.appImage.homeHighlited)
-//        tabBarItem.isEnabled = true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-//        if UserDefaults.standard.object(forKey: "userID") != nil {
-//            let client      :TWTRAPIClient = TWTRAPIClient()
-//            let screenName  :String = UserDefaults.standard.object(forKey: "userName") as! String
-//            self.dataSource = TWTRUserTimelineDataSource(screenName: screenName, apiClient: client)
-        
-            super.viewWillAppear(animated)
-//        }
-    }
     override var prefersStatusBarHidden: Bool {
         return true
     }

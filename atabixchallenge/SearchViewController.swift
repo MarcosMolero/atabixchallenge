@@ -14,6 +14,11 @@ class SearchViewController:UIViewController {
     @IBOutlet weak var searchBar: CustomSearchBar!
     @IBOutlet weak var searchButton: CustomSearchButton!
     
+//    func show2(){
+//        let client      = TWTRAPIClient()
+//        self.dataSource = TWTRSearchTimelineDataSource(searchQuery: "#apple", apiClient: client)
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

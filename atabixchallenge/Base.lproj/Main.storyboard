@@ -12,12 +12,12 @@
         <!--Favourites-->
         <scene sceneID="j0x-Kw-y73">
             <objects>
-                <viewController title="Favourites" id="XcN-3o-hh3" sceneMemberID="viewController">
+                <viewController title="Favourites" id="XcN-3o-hh3" customClass="FavouritesViewController" customModule="atabixchallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VXl-ur-dU4"/>
                         <viewControllerLayoutGuide type="bottom" id="CLL-JO-K5J"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4xC-4F-QFG">
+                    <view key="view" contentMode="scaleToFill" id="4xC-4F-QFG" customClass="UITableView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYI-qu-KNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-940" y="-72"/>
+            <point key="canvasLocation" x="-940" y="-72.413793103448285"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oSa-68-jdK">

@@ -18,14 +18,17 @@ class LoginViewController: UIViewController {
     func draw() {
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
-                print("\n\(unwrappedSession.userID)")
-                print("\n\(unwrappedSession.userName)")
-                print("\n\(unwrappedSession.authToken)")
-                print("\n\(unwrappedSession.authTokenSecret)")
+                print("\n")
+                print("\(unwrappedSession.userID)")
+                print("\(unwrappedSession.userName)")
+                print("\(unwrappedSession.authToken)")
+                print("\(unwrappedSession.authTokenSecret)")
+                print("\n")
                 
                 self.saveToken(unwrappedSession.userID, unwrappedSession.userName, unwrappedSession.authToken, unwrappedSession.authTokenSecret)
             } else {
                 NSLog("Login error: %@", error!.localizedDescription);
+                UtilAlertManagement.loginFailed(self)
             }
         }
         
@@ -48,9 +51,13 @@ class LoginViewController: UIViewController {
 //        self.utilActivityIndicator.stopActivityIndicator(self.utilActivityIndicator.actInd)
                 
         let viewController  :UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-        viewController.selectedIndex = 1
+        viewController.selectedIndex = 0
 
-        self.present(viewController, animated: true, completion: nil)
+        
+        let wsc = WebServiceComunication()
+        wsc.tweetFavorites(UserDefaults.standard.string(forKey: "userID")!)
+        
+//        self.present(viewController, animated: true, completion: nil)
     }
     
     func loginFailure() {

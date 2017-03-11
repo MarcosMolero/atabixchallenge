@@ -16,6 +16,7 @@
 		363734621E7179F600AD7F51 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363734611E7179F600AD7F51 /* AppConstants.swift */; };
 		363734641E717F1E00AD7F51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363734631E717F1E00AD7F51 /* ProfileViewController.swift */; };
 		363FFF1A1E6FFF2F00C7B64E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FFF191E6FFF2F00C7B64E /* LoginViewController.swift */; };
+		366310091E74055800AD72DC /* UtilAlertManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366310081E74055800AD72DC /* UtilAlertManagement.swift */; };
 		368F4E421E73139B00CEB917 /* WebServiceCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F4E411E73139B00CEB917 /* WebServiceCommunication.swift */; };
 		368F4E441E731B6E00CEB917 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F4E431E731B6E00CEB917 /* SearchViewController.swift */; };
 		368F4E461E731D5500CEB917 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F4E451E731D5500CEB917 /* CustomSearchBar.swift */; };
@@ -36,6 +37,7 @@
 		363734611E7179F600AD7F51 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		363734631E717F1E00AD7F51 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		363FFF191E6FFF2F00C7B64E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		366310081E74055800AD72DC /* UtilAlertManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilAlertManagement.swift; sourceTree = "<group>"; };
 		368F4E411E73139B00CEB917 /* WebServiceCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceCommunication.swift; sourceTree = "<group>"; };
 		368F4E431E731B6E00CEB917 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		368F4E451E731D5500CEB917 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				363734611E7179F600AD7F51 /* AppConstants.swift */,
+				366310081E74055800AD72DC /* UtilAlertManagement.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				368F4E461E731D5500CEB917 /* CustomSearchBar.swift in Sources */,
 				368F4E421E73139B00CEB917 /* WebServiceCommunication.swift in Sources */,
 				36197F851E71E12900AF9D94 /* FavouritesViewController.swift in Sources */,
+				366310091E74055800AD72DC /* UtilAlertManagement.swift in Sources */,
 				363734621E7179F600AD7F51 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
