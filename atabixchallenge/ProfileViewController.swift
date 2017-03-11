@@ -29,14 +29,14 @@ class ProfileViewController: TWTRTimelineViewController, TWTRTimelineDelegate {
         }
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TWTRTweetTableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TWTRTweetTableViewCell
-        
-        cell.tweetView.backgroundColor = UIColor.red
-        
-        return cell
-    }
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TWTRTweetTableViewCell {
+//        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TWTRTweetTableViewCell
+//        
+//        cell.tweetView.backgroundColor = UIColor.red
+//        
+//        return cell
+//    }
     
     func timelineDidBeginLoading(_ timeline: TWTRTimelineViewController) {
         print("timelineDidBeginLoading ...")

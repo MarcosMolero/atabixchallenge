@@ -14,7 +14,7 @@ class WebServiceComunication {
     func tweetFavorites(_ userID:String) {
         let client = TWTRAPIClient()
         let statusesShowEndpoint = "https://api.twitter.com/1.1/favorites/list.json"
-        let params = ["user_id": "\(userID)", "count": "2"]
+        let params = ["user_id": "\(userID)", "count": "10"]
         
         var clientError : NSError?
         
@@ -28,7 +28,8 @@ class WebServiceComunication {
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])
                 print("json: \(json)")
-                // TODO: Return jsonData
+                
+
             } catch let jsonError as NSError {
                 print("json error: \(jsonError.localizedDescription)")
             }

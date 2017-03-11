@@ -9,18 +9,31 @@
 import Foundation
 import TwitterKit
 
-class FavouritesViewController: TWTRTimelineViewController, TWTRTweetViewDelegate {
+class FavouritesViewController: UIViewController {
     
     
     func show() {
-        if UserDefaults.standard.object(forKey: "userID") != nil {
+        // 774970773219999745
+        // 631879971628183552
+        
+        // TODO: Base this Tweet ID on some data from elsewhere in your app
+        TWTRAPIClient().loadTweet(withID: "631879971628183552") { (tweet, error) in
             
-            let client      :TWTRAPIClient = TWTRAPIClient()
-            let screenName  :String = UserDefaults.standard.object(forKey: "userName") as! String
-            
-            self.dataSource = TWTRUserTimelineDataSource(screenName: screenName, apiClient: client)
-            self.showTweetActions = true
+            if (tweet != nil) {
+                let tweetView = TWTRTweetView(tweet: tweet)
+                tweetView.center = CGPoint(x: self.view.center.x, y: self.topLayoutGuide.length + tweetView.frame.size.height / 2);
+                self.view.addSubview(tweetView)
+            } else {
+                NSLog("Tweet load error: %@", error!.localizedDescription)
+            }
         }
+
+        
+
+
+
+        
+
     }
     
     func setupData() {
@@ -28,19 +41,14 @@ class FavouritesViewController: TWTRTimelineViewController, TWTRTweetViewDelegat
         webServiceCommunication.tweetFavorites(UserDefaults.standard.object(forKey: "userID")! as! String)
 //        let tweets = TWTRTweet.tweetsWithJSONArray(array)
         
-        // TODO: Recoger el JSON y mostrar los Tweets.
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
         
-        show()
-    }
-    func tweetView(tweetView: TWTRTweetView, didSelectTweet tweet: TWTRTweet) {
-        // Log a message whenever a user taps on a tweet
-        print("Selected tweet with ID: \(tweet.tweetID)")
+      
+//        show()
     }
     
     override var prefersStatusBarHidden: Bool {
