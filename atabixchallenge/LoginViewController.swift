@@ -15,8 +15,12 @@ let loginError  :String = "com.marcosmolero.loginError"
 
 class LoginViewController: UIViewController {
     
+    let utilActivityIndicator   :UtilActivityIndicator = UtilActivityIndicator()
+    
     func draw() {
         let logInButton = TWTRLogInButton { (session, error) in
+            self.utilActivityIndicator.startActivityIndicator(self.utilActivityIndicator.showActivityIndicator(self.view))
+
             if let unwrappedSession = session {
                 print("\n")
                 print("\(unwrappedSession.userID)")
@@ -27,8 +31,9 @@ class LoginViewController: UIViewController {
                 
                 self.saveToken(unwrappedSession.userID, unwrappedSession.userName, unwrappedSession.authToken, unwrappedSession.authTokenSecret)
             } else {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: loginError), object: self)
+
                 NSLog("Login error: %@", error!.localizedDescription);
-                UtilAlertManagement.loginFailed(self)
             }
         }
         
@@ -48,8 +53,8 @@ class LoginViewController: UIViewController {
     
     func loginSuccess() {
         NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: loginOk),object: nil)
-//        self.utilActivityIndicator.stopActivityIndicator(self.utilActivityIndicator.actInd)
-                
+        utilActivityIndicator.stopActivityIndicator(self.utilActivityIndicator.actInd)
+        
         let viewController  :UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
         viewController.selectedIndex = 0
         
@@ -58,12 +63,12 @@ class LoginViewController: UIViewController {
     
     func loginFailure() {
         NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: loginError),object: nil)
-        // Show alert
+        utilActivityIndicator.stopActivityIndicator(self.utilActivityIndicator.actInd)
+        UtilAlertManagement.loginFailed(self)
     }
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        
     }
     
     override func viewDidLoad() {
@@ -76,9 +81,9 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Entro en Login")
         
     }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }

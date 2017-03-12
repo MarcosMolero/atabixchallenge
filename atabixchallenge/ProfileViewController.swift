@@ -23,20 +23,9 @@ class ProfileViewController: TWTRTimelineViewController, TWTRTimelineDelegate {
             self.timelineDelegate = self
             self.showTweetActions = true
             
-            
-            
             self.navigationItem.title = screenName
         }
     }
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TWTRTweetTableViewCell {
-//        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TWTRTweetTableViewCell
-//        
-//        cell.tweetView.backgroundColor = UIColor.red
-//        
-//        return cell
-//    }
     
     func timelineDidBeginLoading(_ timeline: TWTRTimelineViewController) {
         print("timelineDidBeginLoading ...")

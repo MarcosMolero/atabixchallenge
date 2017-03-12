@@ -12,13 +12,12 @@ import TwitterKit
 class WebServiceComunication {
     
     func tweetFavorites(_ userID:String) {
-        let client = TWTRAPIClient()
-        let statusesShowEndpoint = "https://api.twitter.com/1.1/favorites/list.json"
-        let params = ["user_id": "\(userID)", "count": "10"]
+        let client          :TWTRAPIClient = TWTRAPIClient()
+        let url             :String = "https://api.twitter.com/1.1/favorites/list.json"
+        let params          :Dictionary = ["user_id": "\(userID)", "count": "1"]
+        var clientError     :NSError?
         
-        var clientError : NSError?
-        
-        let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
+        let request = client.urlRequest(withMethod: "GET", url: url, parameters: params, error: &clientError)
         
         client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
             if connectionError != nil {
@@ -28,23 +27,20 @@ class WebServiceComunication {
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])
                 print("json: \(json)")
-                
 
             } catch let jsonError as NSError {
                 print("json error: \(jsonError.localizedDescription)")
             }
         }
-
     }
     
-    func tweetRequest(_ id:String) { //        595488594917195776
+    func tweetRequest(_ id:String) { // 595488594917195776
+        let client          :TWTRAPIClient = TWTRAPIClient()
+        let url             :String = "https://api.twitter.com/1.1/statuses/show.json"
+        let params          :Dictionary = ["id": "\(id)"]
+        var clientError     :NSError?
         
-        let client = TWTRAPIClient()
-        let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/show.json"
-        let params = ["id": "\(id)"]
-        var clientError : NSError?
-        
-        let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
+        let request = client.urlRequest(withMethod: "GET", url: url, parameters: params, error: &clientError)
         
         client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
             if connectionError != nil {
