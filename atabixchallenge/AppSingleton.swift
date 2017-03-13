@@ -12,10 +12,12 @@ import SwiftyJSON
 class AppSingleton {
     static let sharedInstance: AppSingleton = AppSingleton()
     
-    var jsonObject:[JSON]
+    var jsonObject      :[JSON]
+    var listOfTweetID   :[String]
     
     init() {
-        self.jsonObject = [JSON]()
+        self.jsonObject     = [JSON]()
+        self.listOfTweetID  = [String]()
         
     }
 }

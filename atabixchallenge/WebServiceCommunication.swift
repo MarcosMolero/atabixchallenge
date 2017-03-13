@@ -31,6 +31,9 @@ class WebServiceComunication {
                 let jsonObject              = JSON(data: data!)
                 
                 instanceAppSingleton.jsonObject = jsonObject.arrayValue
+                
+//                let tweet = TWTRTweet(JSONDictionary: jsonObject)
+
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: favOk), object: self)
 
             } catch let jsonError as NSError {
