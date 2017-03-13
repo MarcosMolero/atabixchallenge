@@ -16,6 +16,7 @@
 		363734621E7179F600AD7F51 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363734611E7179F600AD7F51 /* AppConstants.swift */; };
 		363734641E717F1E00AD7F51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363734631E717F1E00AD7F51 /* ProfileViewController.swift */; };
 		363FFF1A1E6FFF2F00C7B64E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363FFF191E6FFF2F00C7B64E /* LoginViewController.swift */; };
+		365892971E7684DF007E3578 /* AppSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365892961E7684DF007E3578 /* AppSingleton.swift */; };
 		366310091E74055800AD72DC /* UtilAlertManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366310081E74055800AD72DC /* UtilAlertManagement.swift */; };
 		3663100F1E75A1ED00AD72DC /* UtilActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663100E1E75A1ED00AD72DC /* UtilActivityIndicator.swift */; };
 		368F4E421E73139B00CEB917 /* WebServiceCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F4E411E73139B00CEB917 /* WebServiceCommunication.swift */; };
@@ -38,6 +39,7 @@
 		363734611E7179F600AD7F51 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		363734631E717F1E00AD7F51 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		363FFF191E6FFF2F00C7B64E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		365892961E7684DF007E3578 /* AppSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSingleton.swift; sourceTree = "<group>"; };
 		366310081E74055800AD72DC /* UtilAlertManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilAlertManagement.swift; sourceTree = "<group>"; };
 		3663100E1E75A1ED00AD72DC /* UtilActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilActivityIndicator.swift; sourceTree = "<group>"; };
 		368F4E411E73139B00CEB917 /* WebServiceCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceCommunication.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		36790D5B1E6F1B2100F775B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				365892961E7684DF007E3578 /* AppSingleton.swift */,
 				368F4E411E73139B00CEB917 /* WebServiceCommunication.swift */,
 			);
 			name = Model;
@@ -297,6 +300,7 @@
 			files = (
 				368F4E481E731D6900CEB917 /* CustomSearchButton.swift in Sources */,
 				363734641E717F1E00AD7F51 /* ProfileViewController.swift in Sources */,
+				365892971E7684DF007E3578 /* AppSingleton.swift in Sources */,
 				363FFF1A1E6FFF2F00C7B64E /* LoginViewController.swift in Sources */,
 				3637345F1E713BE300AD7F51 /* TabBarController.swift in Sources */,
 				368F4E441E731B6E00CEB917 /* SearchViewController.swift in Sources */,

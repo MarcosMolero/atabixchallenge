@@ -16,7 +16,7 @@ class FavouritesViewController: UIViewController {
         // 774970773219999745
         // 631879971628183552
         
-        TWTRAPIClient().loadTweet(withID: "774970773219999745") { (tweet, error) in
+        TWTRAPIClient().loadTweet(withID: "774970775614976001") { (tweet, error) in
             if (tweet != nil) {
                 let tweetView = TWTRTweetView(tweet: tweet)
                 tweetView.center = CGPoint(x: self.view.center.x, y: self.topLayoutGuide.length + tweetView.frame.size.height / 2);
@@ -28,7 +28,7 @@ class FavouritesViewController: UIViewController {
     }
     
     func multipleTweets() {
-        let listOfTweets:[String] = ["184701590"]
+//        let listOfTweets:[String] = ["184701590"]
 
 //        TWTRAPIClient().loadTweets(withIDs: listOfTweets) { tweets, error in
 //            if tweets != nil {
@@ -41,22 +41,39 @@ class FavouritesViewController: UIViewController {
 //        }
     }
     
+    func getTweetID() {
+        NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: favOk),object: nil)
+        
+        let instanceAppSingleton = AppSingleton.sharedInstance
+        
+        var listOfTweetsID: [String] = [String]()
+        
+        for item in instanceAppSingleton.jsonObject {
+            var tweetID :String = String()
+            tweetID = item["id"].stringValue
+            listOfTweetsID.append(tweetID)
+        }
+        
+        for item in listOfTweetsID {
+            print(item)
+        }
+        
+        
+        //        let tweetData = TWTRTweet.tweets(withJSONArray: jsonObject.arrayValue)
 
+    }
     
     func setupData() {
+        NotificationCenter.default.addObserver(self, selector: #selector(FavouritesViewController.getTweetID), name: NSNotification.Name(rawValue: favOk), object: nil)
+
         let webServiceCommunication:WebServiceComunication = WebServiceComunication()
         webServiceCommunication.tweetFavorites(UserDefaults.standard.object(forKey: "userID")! as! String)
-        
-//        let tweetData = TWTRTweet.tweetsWithJSONArray(responseFromTwitter)
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
-        
-      
-//        show()
     }
     
     override var prefersStatusBarHidden: Bool {

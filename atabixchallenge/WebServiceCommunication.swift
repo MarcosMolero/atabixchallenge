@@ -8,15 +8,17 @@
 
 import Foundation
 import TwitterKit
+import Alamofire
+import SwiftyJSON
 
 class WebServiceComunication {
     
     func tweetFavorites(_ userID:String) {
         let client          :TWTRAPIClient = TWTRAPIClient()
         let url             :String = "https://api.twitter.com/1.1/favorites/list.json"
-        let params          :Dictionary = ["user_id": "\(userID)", "count": "1"]
+        let params          :Dictionary = ["user_id": "\(userID)", "count": "20"]
         var clientError     :NSError?
-        
+
         let request = client.urlRequest(withMethod: "GET", url: url, parameters: params, error: &clientError)
         
         client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
@@ -25,8 +27,11 @@ class WebServiceComunication {
             }
             
             do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                print("json: \(json)")
+                let instanceAppSingleton    = AppSingleton.sharedInstance
+                let jsonObject              = JSON(data: data!)
+                
+                instanceAppSingleton.jsonObject = jsonObject.arrayValue
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: favOk), object: self)
 
             } catch let jsonError as NSError {
                 print("json error: \(jsonError.localizedDescription)")

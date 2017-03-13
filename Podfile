@@ -5,4 +5,6 @@ use_frameworks!
 target ‘atabixchallenge’ do
 	pod 'Fabric'
 	pod 'TwitterKit'
+	pod 'Alamofire'
+	pod ‘SwiftyJSON’
 end
