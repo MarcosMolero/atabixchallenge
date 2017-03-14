@@ -8,8 +8,11 @@
 
 import Foundation
 import TwitterKit
-import Alamofire
 import SwiftyJSON
+
+let loginOk     :String = "com.marcosmolero.loginOk"
+let loginError  :String = "com.marcosmolero.loginError"
+let favOk       :String = "com.marcosmolero.favOk"
 
 class WebServiceComunication {
     

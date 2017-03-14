@@ -10,10 +10,6 @@ import Foundation
 import UIKit
 import TwitterKit
 
-let loginOk     :String = "com.marcosmolero.loginOk"
-let loginError  :String = "com.marcosmolero.loginError"
-let favOk       :String = "com.marcosmolero.favOk"
-
 class LoginViewController: UIViewController {
     
     let utilActivityIndicator   :UtilActivityIndicator = UtilActivityIndicator()
