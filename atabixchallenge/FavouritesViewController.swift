@@ -12,9 +12,9 @@ import TwitterKit
 class FavouritesViewController: UIViewController, TWTRTweetViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     let instanceAppSingleton = AppSingleton.sharedInstance
+    
     var tableView   :UITableView = UITableView()
-
-    var tweets: [TWTRTweet] = [] {
+    var tweets      :[TWTRTweet] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -28,20 +28,23 @@ class FavouritesViewController: UIViewController, TWTRTweetViewDelegate, UITable
             tweetID = item["id"].stringValue
             instanceAppSingleton.listOfTweetID.append(tweetID)
         }
-
-        draw()
+        
+        DispatchQueue.global(qos: .default).async {
+            self.loadTweets()
+            DispatchQueue.main.async {
+                self.draw()
+            }
+        }
     }
     
     func setupData() {
         NotificationCenter.default.addObserver(self, selector: #selector(FavouritesViewController.getTweetID), name: NSNotification.Name(rawValue: favOk), object: nil)
 
-        let webServiceCommunication:WebServiceComunication = WebServiceComunication()
+        let webServiceCommunication :WebServiceComunication = WebServiceComunication()
         webServiceCommunication.tweetFavorites(UserDefaults.standard.object(forKey: "userID")! as! String)
-        
     }
     
-    
-    func draw() {
+    func loadTweets() {
         TWTRAPIClient().loadTweets(withIDs: instanceAppSingleton.listOfTweetID) { tweets2, error in
             if tweets2 != nil {
                 for item in tweets2! {
@@ -51,40 +54,34 @@ class FavouritesViewController: UIViewController, TWTRTweetViewDelegate, UITable
                 NSLog("Tweets load error: %@", error!.localizedDescription)
             }
         }
-        
+    }
+    
+    func draw() {
         let tableViewW:CGFloat = UIScreen.main.bounds.width
         let tableViewH:CGFloat = UIScreen.main.bounds.height
         let tableViewX:CGFloat = 0
         let tableViewY:CGFloat = self.navigationController!.navigationBar.frame.size.height + UIApplication.shared.statusBarFrame.height
         
-        tableView.frame = CGRect(x: tableViewX, y: tableViewY, width: tableViewW, height: tableViewH)
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.frame         = CGRect(x: tableViewX, y: tableViewY, width: tableViewW, height: tableViewH)
+        tableView.delegate      = self
+        tableView.dataSource    = self
 
-        tableView.estimatedRowHeight = 150
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.allowsSelection = false
+        tableView.estimatedRowHeight    = 150
+        tableView.rowHeight             = UITableViewAutomaticDimension
+        tableView.allowsSelection       = false
         tableView.register(TWTRTweetTableViewCell.self, forCellReuseIdentifier: "TweetCell")
         
         self.navigationItem.title = "My Favourites"
-
-        
         self.view.addSubview(tableView)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupData()
-
-    }
-        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tweets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tweet = tweets[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath as IndexPath) as! TWTRTweetTableViewCell
+        let tweet   = tweets[indexPath.row]
+        let cell    = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath as IndexPath) as! TWTRTweetTableViewCell
         
         cell.tweetView.delegate = self
         cell.configure(with: tweet)
@@ -94,5 +91,14 @@ class FavouritesViewController: UIViewController, TWTRTweetViewDelegate, UITable
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let tweet = tweets[indexPath.row]
         return TWTRTweetTableViewCell.height(for: tweet, style: TWTRTweetViewStyle.compact, width: self.view.bounds.width, showingActions: true)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupData()
     }
 }

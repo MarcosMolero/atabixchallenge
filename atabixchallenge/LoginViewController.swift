@@ -82,10 +82,5 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
 }

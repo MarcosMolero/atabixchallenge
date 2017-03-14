@@ -11,17 +11,14 @@ import TwitterKit
 
 class ProfileViewController: TWTRTimelineViewController, TWTRTimelineDelegate {
     
-    
-    
-    func show() {
+    func draw() {
         if UserDefaults.standard.object(forKey: "userID") != nil {
-            
             let client      :TWTRAPIClient = TWTRAPIClient()
             let screenName  :String = UserDefaults.standard.object(forKey: "userName") as! String
             
-            self.dataSource = TWTRUserTimelineDataSource(screenName: screenName, apiClient: client)
-            self.timelineDelegate = self
-            self.showTweetActions = true
+            self.dataSource         = TWTRUserTimelineDataSource(screenName: screenName, apiClient: client)
+            self.timelineDelegate   = self
+            self.showTweetActions   = true
             
             self.navigationItem.title = screenName
         }
@@ -37,14 +34,12 @@ class ProfileViewController: TWTRTimelineViewController, TWTRTimelineDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        show()
+        draw()
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        
-        tabBarItem = UITabBarItem(title: "Personal", image: AppConstants.appImage.homeNormal, selectedImage: AppConstants.appImage.homeHighlited)
-        tabBarItem.isEnabled = true
+        tabBarItem = UITabBarItem(title: "Timeline", image: AppConstants.appImage.homeNormal, selectedImage: AppConstants.appImage.homeHighlited)
     }
     
 }

@@ -18,6 +18,5 @@ class AppSingleton {
     init() {
         self.jsonObject     = [JSON]()
         self.listOfTweetID  = [String]()
-        
     }
 }

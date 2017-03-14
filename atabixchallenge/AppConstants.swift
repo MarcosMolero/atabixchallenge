@@ -17,6 +17,5 @@ class AppConstants {
         
         static let homeNormal           :UIImage = UIImage(named: "Home-30")!
         static let homeHighlited        :UIImage = UIImage(named: "Home Filled-30")!
-        
     }
 }

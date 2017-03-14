@@ -20,7 +20,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        
+
 //        let tabOne = UIViewController()
 //        let tabOneBarItem = UITabBarItem(title: "Profile", image: AppConstants.appImage.twitterNormal, selectedImage: AppConstants.appImage.twitterHighlited)
 //        tabOne.tabBarItem = tabOneBarItem
@@ -32,7 +32,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 //        self.viewControllers = [tabOne, tabTwo]
     }
     
-    // UITabBarControllerDelegate method
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         print("Selected \(viewController.title!)")
     }

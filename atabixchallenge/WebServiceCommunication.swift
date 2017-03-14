@@ -31,9 +31,6 @@ class WebServiceComunication {
                 let jsonObject              = JSON(data: data!)
                 
                 instanceAppSingleton.jsonObject = jsonObject.arrayValue
-                
-//                let tweet = TWTRTweet(JSONDictionary: jsonObject)
-
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: favOk), object: self)
 
             } catch let jsonError as NSError {
@@ -42,7 +39,7 @@ class WebServiceComunication {
         }
     }
     
-    func tweetRequest(_ id:String) { // 595488594917195776
+    func tweetRequest(_ id:String) {
         let client          :TWTRAPIClient = TWTRAPIClient()
         let url             :String = "https://api.twitter.com/1.1/statuses/show.json"
         let params          :Dictionary = ["id": "\(id)"]
